@@ -76,6 +76,11 @@ socket.on("output-change", ({ out, roomId }) => {
     socket.in(roomId).emit("output-change", { out });
 });
 
+socket.on("processing", ({ proc, roomId }) => {
+          // console.log(user,mssg);
+    socket.in(roomId).emit("processing", { proc });
+});
+
 socket.on("sync-code", ({ socketId, code }) => {
         //   console.log(code);
         //   console.log('here');
